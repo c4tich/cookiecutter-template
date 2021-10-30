@@ -16,9 +16,9 @@ Install Guide
 
     .. code-block:: console
 
-        $ python -m venv venv --prompt myvenv
-        $ source venv/bin/activate
-        (myvenv) $
+        $ conda create --name {{cookiecutter.package_name}} --python=3.10
+        $ conda activate {{cookiecutter.package_name}}
+        ({{cookiecutter.package_name}}) $
 
 The simplest way to install {{cookiecutter.package_display_name}} is using Pip.
 
@@ -31,21 +31,11 @@ This will install ``{{cookiecutter.package_name}}`` and all of its dependencies.
 
 .. _api-reference-label:
 
-API Reference
-=============
-
-The `API Reference <http://{{cookiecutter.package_name}}.readthedocs.io>`_ provides API-level documentation.
-
-
-.. include:: ../../../CHANGELOG.rst
-
-
-.. _report-bugs-label:
 
 Report Bugs
 ===========
 
-Report bugs at the `issue tracker <https://github.com/{{cookiecutter.github_user_name}}/{{cookiecutter.github_repo_name}}/issues>`_.
+Report bugs at the `issue tracker <https://gitlab.com/opendatascientists/{{cookiecutter.gitlab_repo_name}}/issues>`_.
 
 Please include:
 

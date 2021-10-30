@@ -44,7 +44,7 @@ if __name__ == '__main__':
         description='{{cookiecutter.package_short_description}}',
         long_description='\n\n'.join([readme, changes]),
         license='{{cookiecutter.license}}',
-        url='https://github.com/{{cookiecutter.github_user_name}}/{{cookiecutter.github_repo_name}}',
+        url='https://gitlab.com/opendatascientists/{{cookiecutter.gitlab_repo_name}}',
         version=version,
         author='{{cookiecutter.full_name}}',
         author_email='{{cookiecutter.email}}',
@@ -57,7 +57,6 @@ if __name__ == '__main__':
         zip_safe=False,
         classifiers=['Development Status :: 3 - Alpha',
                      'Intended Audience :: Developers',
-                     'Programming Language :: Python :: 3.6',
-                     'Programming Language :: Python :: 3.7',
-                     'Programming Language :: Python :: 3.8']
+                     'Programming Language :: Python :: 3.10',
+                     ]
     )
