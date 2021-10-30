@@ -1,13 +1,9 @@
-Contributing Guide
-==================
+# Contributing Guide
 
 Contributions are welcome and greatly appreciated!
 
 
-.. _contributing-workflow-label:
-
-Workflow
---------
+## Workflow
 
 A bug-fix or enhancement is delivered using a pull request. A good pull request
 should cover one bug-fix or enhancement feature. This strategy ensures the
@@ -20,17 +16,17 @@ is as follows.
 * Fork the ``{{cookiecutter.gitlab_repo_name}}`` repo into your account.
 
 * Obtain the source by cloning it onto your development machine.
-
-  .. code-block:: console
-
-      $ git clone git@gitlab.com:opendatascientists/{{cookiecutter.gitlab_repo_name}}.git
-      $ cd {{cookiecutter.package_name}}
+  
+```bash
+  $ git clone git@gitlab.com:opendatascientists/{{cookiecutter.gitlab_repo_name}}.git
+  $ cd {{cookiecutter.package_name}}
+```
 
 * Create a branch for local development:
 
-  .. code-block:: console
-
-      $ git checkout -b name-of-your-bugfix-or-feature
+```bash
+  $ git checkout -b name-of-your-bugfix-or-feature
+```
 
   Now you can make your changes locally.
 
@@ -38,10 +34,10 @@ is as follows.
   rule also specifies a project specific prompt label to use once the virtual
   environment is activated.
 
-  .. code-block:: console
-
-      $ conda create --name {{cookiecutter.gitlab_repo_name}} --python=3.10
-      $ conda activate {{cookiecutter.gitlab_repo_name}}
+```bash
+$ conda create --name {{cookiecutter.gitlab_repo_name}} --python=3.10
+$ conda activate {{cookiecutter.gitlab_repo_name}}
+```
 
 * Develop fix or enhancement:
 
@@ -52,20 +48,16 @@ is as follows.
     the change works as expected.
 
   * Run the test suite.
-
-    .. code-block:: console
-
-        ({{cookiecutter.package_name}}) $ pytest 
-
-    See the :ref:`testing-label` section for more information on testing.
+```bash
+({{cookiecutter.package_name}}) $ pytest 
+```
 
   * Commit and push changes to your fork.
-
-  .. code-block:: console
-
-      $ git add .
-      $ git commit -m "A detailed description of the changes."
-      $ git push origin name-of-your-bugfix-or-feature
+```bash
+  $ git add .
+  $ git commit -m "A detailed description of the changes."
+  $ git push origin name-of-your-bugfix-or-feature
+```
 
   A pull request should preferably only have one commit upon the current
   master HEAD, (via rebases and squash).
