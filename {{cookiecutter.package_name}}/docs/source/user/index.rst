@@ -35,7 +35,7 @@ This will install ``{{cookiecutter.package_name}}`` and all of its dependencies.
 Report Bugs
 ===========
 
-Report bugs at the `issue tracker <https://gitlab.com/opendatascientists/{{cookiecutter.gitlab_repo_name}}/issues>`_.
+Report bugs at the `issue tracker <https://{{cookiecutter.git_server_host}}/{{cookiecutter.git_server_username}}/{{cookiecutter.git_repo_name}}/issues>`_.
 
 Please include:
 

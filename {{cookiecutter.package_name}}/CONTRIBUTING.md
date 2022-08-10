@@ -13,12 +13,14 @@ rejected.
 The workflow that developers typically use to fix a bug or add enhancements
 is as follows.
 
-* Fork the ``{{cookiecutter.gitlab_repo_name}}`` repo into your account.
+* Fork the ``{{cookiecutter.git_repo_name}}`` repo into your account.
 
 * Obtain the source by cloning it onto your development machine.
   
 ```bash
-  $ git clone git@gitlab.com:opendatascientists/{{cookiecutter.gitlab_repo_name}}.git
+  # either SSH (preferred) or HTTPS
+  $ git clone git@{{cookiecutter.git_server_host}}:{{cookiecutter.git_server_username}}/{{cookiecutter.package_name}}.git
+  $ git clone https://{{cookiecutter.git_server_host}}/{{cookiecutter.git_server_username}}/{{cookiecutter.package_name}}.git
   $ cd {{cookiecutter.package_name}}
 ```
 
@@ -35,8 +37,8 @@ is as follows.
   environment is activated.
 
 ```bash
-$ conda create --name {{cookiecutter.gitlab_repo_name}} --python=3.10
-$ conda activate {{cookiecutter.gitlab_repo_name}}
+$ conda create --name {{cookiecutter.git_repo_name}} --python=3.10
+$ conda activate {{cookiecutter.git_repo_name}}
 ```
 
 * Develop fix or enhancement:

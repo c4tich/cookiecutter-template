@@ -5,7 +5,9 @@
   "version": "0.0.1",
   "full_name": "Your Name",
   "email": "",
-  "gitlab_repo_name": "{{cookiecutter.package_display_name.lower().replace(' ', '_').replace('-', '_')}}",
+  "git_server_username": "user",
+  "git_server_host": "git.hermes3x-cidelcampeador.duckdns.org",
+  "git_repo_name": "{{cookiecutter.package_display_name.lower().replace(' ', '_').replace('-', '_')}}",
   "license": [ "Not open source", "MIT license", "BSD license", "Apache Software License 2.0", "GNU General Public License v3"],
   "year": "{% now 'utc', '%Y' %}",
   "_extensions": ["jinja2_time.TimeExtension"]
