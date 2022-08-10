@@ -44,7 +44,7 @@ if __name__ == '__main__':
         description='{{cookiecutter.package_short_description}}',
         long_description='\n\n'.join([readme, changes]),
         license='{{cookiecutter.license}}',
-        url='https://gitlab.com/opendatascientists/{{cookiecutter.gitlab_repo_name}}',
+        url='https://{{cookiecutter.git_server_host}}/{{cookiecutter.git_server_username}}/{{cookiecutter.git_repo_name}}',
         version=version,
         author='{{cookiecutter.full_name}}',
         author_email='{{cookiecutter.email}}',
