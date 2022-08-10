@@ -6,10 +6,10 @@ This is a cookiecutter template created from https://github.com/claws/cookiecutt
 To use it, clone the project 
 
 ```bash
-git clone git@gitlab.com:opendatascientists/madrid-cookiecutter-template.git
+git clone https://git.hermes3x-cidelcampeador.duckdns.org/cfortichj/cookiecutter-template
 ```
 
-create and activate a conda virtualenv for ``cookiecutter``
+create and activate a [conda virtualenv](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf) for ``cookiecutter`` (note that this environment is only used for cookiecutter, the projects based on this template should use a different conda virtual env)
 
 
 ```bash
@@ -27,15 +27,10 @@ pip install cookiecutter==1.7.3
 run `cookiecutter`
 
 ```bash
-cookiecutter madrid-cookiecutter-template/
+cookiecutter cookiecutter-template/
 ```
 
 and follow the instructions asked by the script. 
-
-Create a conda environment
---------------------------
-
-Go to the [environment configuration](https://team-1634581945508.atlassian.net/wiki/spaces/OPENDATASC/pages/2916354/Configuraci+n+inicial+del+entorno#Crear-entorno-virtual) page in Confluence to learn how to create and configure a conda environment
 
 Check that everything went ok
 -----------------------------
