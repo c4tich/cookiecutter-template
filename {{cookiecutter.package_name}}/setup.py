@@ -1,62 +1,47 @@
-import os
-import re
+from setuptools import setup, find_packages
 
-from setuptools import find_packages, setup
+with open("README.md") as fd_readme:
+    readme = fd_readme.read()
 
-regexp = re.compile(r'.*__version__ = [\'\"](.*?)[\'\"]', re.S)
+with open("CHANGELOG.md") as fd_changelog:
+    changelog = fd_changelog.read()
 
-base_package = '{{cookiecutter.package_name}}'
-base_path = os.path.dirname(__file__)
+with open("requirements.txt") as fd_requirements:
+    requirements = [req.strip() for req in fd_requirements.readlines() if not req.startswith("#")]
 
-init_file = os.path.join(base_path, 'src', '{{cookiecutter.package_name}}', '__init__.py')
-with open(init_file, 'r') as f:
-    module_content = f.read()
+with open("VERSION.txt") as fd_version:
+    version = fd_version.read().strip()
 
-    match = regexp.match(module_content)
-    if match:
-        version = match.group(1)
-    else:
-        raise RuntimeError(
-            'Cannot find __version__ in {}'.format(init_file))
-
-with open('README.rst', 'r') as f:
-    readme = f.read()
-
-with open('CHANGELOG.rst', 'r') as f:
-    changes = f.read()
-
-def parse_requirements(filename):
-    ''' Load requirements from a pip requirements file '''
-    with open(filename, 'r') as fd:
-        lines = []
-        for line in fd:
-            line.strip()
-            if line and not line.startswith("#"):
-                lines.append(line)
-    return lines
-
-requirements = parse_requirements('requirements.txt')
-
-
-if __name__ == '__main__':
-    setup(
-        name='{{cookiecutter.package_name}}',
-        description='{{cookiecutter.package_short_description}}',
-        long_description='\n\n'.join([readme, changes]),
-        license='{{cookiecutter.license}}',
-        url='https://gitlab.com/opendatascientists/{{cookiecutter.gitlab_repo_name}}',
-        version=version,
-        author='{{cookiecutter.full_name}}',
-        author_email='{{cookiecutter.email}}',
-        maintainer='{{cookiecutter.full_name}}',
-        maintainer_email='{{cookiecutter.email}}',
-        install_requires=requirements,
-        keywords=['{{cookiecutter.package_name}}'],
-        package_dir={'': 'src'},
-        packages=find_packages('src'),
-        zip_safe=False,
-        classifiers=['Development Status :: 3 - Alpha',
-                     'Intended Audience :: Developers',
-                     'Programming Language :: Python :: 3.10',
-                     ]
-    )
+setup(
+    author="{{cookiecutter.full_name}}",
+    author_email="{{cookiecutter.email}}",
+    classifiers=[
+        "Development Status :: 2 - Pre-Alpha",
+        "Intended Audience :: Developers",
+        "Natural Language :: English",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+    ],
+    description="""{{cookiecutter.package_short_description}}""",
+    entry_points={
+        "console_scripts": [
+            "{{cookiecutter.package_name}}={{cookiecutter.package_name}}.{{cookiecutter.package_name}}:main"
+        ],
+    },
+    install_requires=requirements,
+    include_package_data=True,
+    name="{{cookiecutter.package_name}}",
+    packages=find_packages(
+        include=[
+            "{{cookiecutter.package_name}}",
+            "{{cookiecutter.package_name}}.*"
+        ]
+    ),
+    test_suite="tests",
+    url="https://{{cookiecutter.git_server_host}}/{{cookiecutter.git_server_username}}/{{cookiecutter.package_name}}.git",
+    version=version,
+    zip_safe=False
+)

@@ -1,2 +1,2 @@
 # Add and remove dependencies as needed
-click==7.0
+click~=8.0
